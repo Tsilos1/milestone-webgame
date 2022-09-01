@@ -1,0 +1,22 @@
+body {
+    background-color: lightcyan;
+}
+
+h1 {
+    color: blue;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#title {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#quiz {
+    border-style: dotted;
+    border-color: blue;
+    border-radius: 15px;
+}
