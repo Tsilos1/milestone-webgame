@@ -25,6 +25,12 @@ p {
     border-style: dotted;
     border-color: blue;
     border-radius: 15px;
+    padding: 20px;
+}
+
+.questansblock {
+    padding-bottom: 20px;
+    border-bottom: solid 1px;
 }
 
 #button {
