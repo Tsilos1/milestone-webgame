@@ -1,4 +1,12 @@
-//each question winning value
+//create array of questions
+
+
+
+//create array of answers
+
+
+
+//each question find winning value
 
 
 //sum winning values (if/else if)
@@ -8,9 +16,24 @@
 //if quest4 (same as above)
 //if quest5 (same as above)
 
+function displayValues() {
+    document.getElementById("result").innerHTML = "";
+    var ele = document.getElementsByTagName('input');
+      
+    for(i = 0; i < ele.length; i++) {
+          
+        if(ele[i].type="radio") {
+          
+            if(ele[i].checked)
+                document.getElementById("result").innerHTML
+                        += ele[i].name + " Value: "
+                        + ele[i].value + "<br>";
+        }
+    }
 
 
-//add totals of sum winning values for each question
+
+//add totals of sum winning values
 
 
 
@@ -23,6 +46,7 @@
 
 
 //based on what wins, go to results page and unhide winning value
+`You are the element ${value}`
 
 
 //tally results
@@ -41,4 +65,3 @@
 //     }
 
 //Results page declare winner
-`You are the element ${value}`
