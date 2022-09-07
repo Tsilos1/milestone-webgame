@@ -1,13 +1,19 @@
-//create array of questions
-
-
-
-//create array of answers
-
-
-
-//each question find winning value
-
+//find and display winning result values
+function displayValues() {
+    document.getElementById("results").innerHTML = "";
+    var ele = document.getElementsByTagName('input');
+      
+    for(i = 0; i < ele.length; i++) {
+          
+        if(ele[i].type="radio") {
+          
+            if(ele[i].checked)
+                document.getElementById("results").innerHTML
+                        += ele[i].name + " Value: "
+                        + ele[i].value + "<br>";
+        }
+    }
+}
 
 //sum winning values (if/else if)
 //if quest1 = earth += +1 earth (else if for air, water, fire, mixed)
@@ -16,20 +22,7 @@
 //if quest4 (same as above)
 //if quest5 (same as above)
 
-function displayValues() {
-    document.getElementById("result").innerHTML = "";
-    var ele = document.getElementsByTagName('input');
-      
-    for(i = 0; i < ele.length; i++) {
-          
-        if(ele[i].type="radio") {
-          
-            if(ele[i].checked)
-                document.getElementById("result").innerHTML
-                        += ele[i].name + " Value: "
-                        + ele[i].value + "<br>";
-        }
-    }
+
 
 
 
@@ -46,7 +39,7 @@ function displayValues() {
 
 
 //based on what wins, go to results page and unhide winning value
-`You are the element ${value}`
+// `You are the element ${value}`
 
 
 //tally results
