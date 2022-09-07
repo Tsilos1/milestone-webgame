@@ -1,4 +1,4 @@
-//find and display winning result values
+//find and display winning result values (keep hidden, use to tally)
 function displayValues() {
     document.getElementById("results").innerHTML = "";
     var ele = document.getElementsByTagName('input');
@@ -15,7 +15,14 @@ function displayValues() {
     }
 }
 
-//sum winning values (if/else if)
+
+//do I need to create poll in JS to create an array to go through questions and find the answer to each question?
+//example cont array = [quest1, quest2, quest3, quest4, quest5];
+
+
+
+
+//sum winning values to determine a winner (if/else if)
 //if quest1 = earth += +1 earth (else if for air, water, fire, mixed)
 //if quest2 (same as above)
 //if quest3 (same as above)
