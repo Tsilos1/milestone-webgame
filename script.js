@@ -16,6 +16,12 @@ function displayValues() {
 }
 
 
+function earthTotal () {
+    document.getElementByClassId(questAnsBlock).innerHTML = ["earth", "air", "water", "fire", "mixed"]
+    
+}
+
+
 //do I need to create poll in JS to create an array to go through questions and find the answer to each question?
 //example cont array = [quest1, quest2, quest3, quest4, quest5];
 
