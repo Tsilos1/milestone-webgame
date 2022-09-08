@@ -1,25 +1,117 @@
 //find and display winning result values (keep hidden, use to tally)
-function displayValues() {
-    document.getElementById("results").innerHTML = "";
-    var ele = document.getElementsByTagName('input');
+// function displayValues() {
+//     document.getElementById("results").innerHTML = "";
+//     var ele = document.getElementsByTagName('input');
       
-    for(i = 0; i < ele.length; i++) {
+//     for(i = 0; i < ele.length; i++) {
           
-        if(ele[i].type="radio") {
+//         if(ele[i].type="radio") {
           
-            if(ele[i].checked)
-                document.getElementById("results").innerHTML
-                        += ele[i].name + " Value: "
-                        + ele[i].value + "<br>";
-        }
-    }
-}
+//             if(ele[i].checked)
+//                 document.getElementById("results").innerHTML
+//                         += ele[i].name + " Value: "
+//                         + ele[i].value + "<br>";
+//         }
+//     }
+// }
 
 
-function earthTotal () {
-    document.getElementByClassId(questAnsBlock).innerHTML = ["earth", "air", "water", "fire", "mixed"]
+function Results () {
+    document.getElementById(quiz).innerHTML = "quiz";
     
-}
+    for (let i = 0; i < earth.length; i++){
+        earth += i + "<br>";
+    }
+
+    for (let i = 0; i < air.length; i++){
+        air += i + "<br>";
+    }
+
+    for (let i = 0; i < water.length; i++){
+        water += i + "<br>";
+    }
+
+    for (let i = 0; i < fire.length; i++){
+        fire += i + "<br>";
+    }
+
+    for (let i = 0; i < mixed.length; i++){
+        mixed += i + "<br>";
+    }
+
+
+
+//unhide default of display:none
+    var earth = document.getElementByInputName("earth");
+    var air = document.getElementByInputName("air");
+    var water = document.getElementByInputName("water");
+    var fire = document.getElementByInputName("fire");
+    var mixed = document.getElementByInputType("mixed");
+
+    if (earth>1){
+        if(earth.style.display === "none"){
+            earth.style.display = "block";}
+        }
+        else{
+            earth.style.display="none";
+        }    
+    }
+
+    if (air>1){
+        if(air.style.display === "none"){
+            air.style.display = "block";
+        }
+        else{
+            air.style.display="none";
+        }    
+    }
+
+    if (water>1){
+        if(water.style.display === "none"){
+            water.style.display = "block";
+        }
+        else{
+            water.style.display="none";
+        }    
+    }
+
+    if (fire>1){
+        if(fire.style.display === "none"){
+            fire.style.display = "block";
+        }
+        else{
+            fire.style.display="none";
+        }    
+    }
+
+    if (mixed>1){
+        if(mixed.style.display === "none"){
+            mixed.style.display = "block";
+        }
+        else{
+            mixed.style.display="none";
+        }    
+    }
+
+
+// switch(cases){
+//     case earth:
+//         text="You are earth";
+//         break;
+//     case air:
+//         text="You are air";
+//         break;
+//     case water:
+//         text="You are water";
+//         break;
+//     case fire:
+//         text="You are fire";
+//         break;
+//     case mixed:
+//         text="You are mixed";
+//         break;
+// }
+
 
 
 //do I need to create poll in JS to create an array to go through questions and find the answer to each question?
