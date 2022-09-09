@@ -23,23 +23,23 @@ var numOfFire = 0
 var numOfWater = 0
 var numOfMixed = 0
 
+let submitButton = document.getElementById ("submit")
 
-form.addEventListener('submit', (event) => {
-    parseAnswers("quest1")
-    parseAnswers("quest2")
-    parseAnswers("quest3")
-    parseAnswers("quest4")
-    parseAnswers("quest5")
-})
+submitButton.addEventListener('click', parseAnswers (
+{
+    name: "quest1",
+    name: "quest2",
+    name: "quest3",
+    name: "quest4",
+    name: "quest5"
+}
+))
 
 
-function parseAnswers (Answers){
-    var inputs = document.getElementsByName(Answers);
-    
-        for (let i = 0; i < inputs.length; i++)
-        {
-        
-        var option = inputs[i]
+function parseAnswers(inputs){
+    var inputs = document.getElementsByName("quest1", "quest2", "quest3", "quest4", "quest5");
+    for (let i = 0; i < inputs.length; i++);  
+    var option = inputs[i];
 
         if (option.checked) {
             if (option.value == "air")
@@ -70,6 +70,11 @@ function parseAnswers (Answers){
     }
 
 
+.then(switch())
+
+
+
+
 
 //unhide default of display:none
 //     var earth = document.getElementByInputValue("earth");
@@ -78,13 +83,21 @@ function parseAnswers (Answers){
 //     var fire = document.getElementByInputValue("fire");
 //     var mixed = document.getElementByInputValue("mixed");
 
-//     if (earth>1){
-//         if(earth.style.display === "none"){
-//             earth.style.display = "block";}
-//         }
-//         else{
-//             earth.style.display="none";
-//         }    
+switch () {
+    case earth >1: earth.style.display === "block"
+    break;
+    case air >1: air.style.display === "block"
+    break;
+    case fire >1: fire.style.display === "block"
+    break;
+    case water >1: water.style.display === "block"
+    break;
+    case mixed >1: mixed.style.display === "block"
+    break;
+}
+        // else{
+        //     earth.style.display="none";
+        // }    
 
 //     if (air>1){
 //         if(air.style.display === "none"){
