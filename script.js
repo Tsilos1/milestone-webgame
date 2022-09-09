@@ -18,6 +18,12 @@
 let form = document.getElementById("quizForm")
 
 var numOfAir = 0
+var numOfEarth = 0
+var numOfFire = 0
+var numOfWater = 0
+var numOfMixed = 0
+
+
 form.addEventListener('submit', (event) => {
     parseAnswers("quest1")
     parseAnswers("quest2")
@@ -27,32 +33,41 @@ form.addEventListener('submit', (event) => {
 })
 
 
-function parseAnswers (parseAnswers){
-    var inputs = document.getElementsByName(answers)
-    for (let i = 0; i < inputs.length; i++)
-    {
-        if (inputs[i].value == "air" && inputs[i].checked)
+function parseAnswers (Answers){
+    var inputs = document.getElementsByName(Answers);
+    
+        for (let i = 0; i < inputs.length; i++)
         {
+        
+        var option = inputs[i]
+
+        if (option.checked) {
+            if (option.value == "air")
+            {
             numOfAir++
-        }
-        if (inputs[i].value == "water" && inputs[i].checked)
-        {
-            numOfWater++
-        }
-        if (inputs[i].value == "fire" && inputs[i].checked)
-        {
-            numOfFire++
-        }
-        if (inputs[i].value == "earth" && inputs[i].checked)
-        {
+            }
+   
+        else if (option.value == "earth")
+            {
             numOfEarth++
-        }
-        if (inputs[i].value == "mixed" && inputs[i].checked)
-        {
+            }
+
+        else if (option.value =="fire")
+            {
+            numOfFire++
+            }
+
+        else if (option.value =="water")
+            {
+            numOfWater++
+            }
+
+        else if (option.value =="mixed")
+            {
             numOfMixed++
+            }
         }
     }
-}
 
 
 
