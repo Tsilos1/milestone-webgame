@@ -33,14 +33,12 @@ parseAnswers("inputs")})
 
 let inputs = document.getElementsByTagName ("input");
 
-console.log(inputs)
-
 function parseAnswers(){
 
     for (let i = 0; i < inputs.length; i++){
-        console.log(inputs)
+        // console.log(inputs)
     let option = inputs[i];
-console.log(option.checked)
+// console.log(option.checked)
         if (option.checked) {
             if (option.value == "air")
             {
@@ -67,33 +65,49 @@ console.log(option.checked)
             numOfMixed++
             }
         }
+return (numOfEarth, numOfAir, numOfFire, numOfMixed, numOfWater)
 
-        console.log ("This is earth", numOfEarth)
-        console.log ("This is air", numOfAir)
-        console.log ("This is fire", numOfFire)
-        console.log ("This is water", numOfWater)
-        console.log ("This is mixed", numOfMixed)
+        
     }
-    }
-
+}
 
 // async await?
+// let finalResult;
+switch (finalResult) {
+    case numOfEarth >1: document.getElementById("earth").style.display === "block";
+    break;
+    case numOfAir >1: document.getElementById("air").style.display === "block";
+    break;
+    case numOfFire >1: document.getElementById("fire").style.display === "block";
+    break;
+    case numOfWater >1: document.getElementById("water").style.display === "block";
+    break;
+    case numOfMixed >1: document.getElementById("mixed").style.display === "block";
+    break;
+    default: console.log("this is the default")
+}
+// document.createElement("h1")="Your final result is"+finalResult 
 
-// switch (showResult) {
-//     case numOfEarth >1: document.getElementById("earth").style.display === "block"
-//     break;
-//     case numOfAir >1: document.getElementById("air").style.display === "block"
-//     break;
-//     case numOfFire >1: document.getElementById("fire").style.display === "block"
-//     break;
-//     case numOfWater >1: document.getElementById("water").style.display === "block"
-//     break;
-//     case numOfMixed >1: document.getElementById("mixed").style.display === "block"
-//     break;
-// }
-        // else{
-        //     earth.style.display="none";
-        // }    
+console.log("The switch is working")
+
+async function displayFinalResults(){
+    let finalResult = await parseAnswers();
+    
+    // console.log(`${finalResult}`)
+    console.log("async is working")
+    return finalResult
+}
+
+displayFinalResults();
+
+
+// if (earth>1){
+//     if(earth.style.display === "none"){
+//         air.style.display = "block";
+//     }
+//     else{
+//         air.style.display="none";
+//     }  
 
 //     if (air>1){
 //         if(air.style.display === "none"){
