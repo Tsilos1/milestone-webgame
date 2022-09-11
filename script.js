@@ -1,20 +1,3 @@
-//find and display winning result values
-// function displayValues() {
-//     document.getElementById("results").innerHTML = "";
-//     var ele = document.getElementsByTagName('input');
-      
-//     for(i = 0; i < ele.length; i++) {
-          
-//         if(ele[i].type="radio") {
-          
-//             if(ele[i].checked)
-//                 document.getElementById("results").innerHTML
-//                         += ele[i].name + " Value: "
-//                         + ele[i].value + "<br>";
-//         }
-//     }
-// }
-
 let form = document.getElementById("quizForm")
 
 var numOfAir = 0;
@@ -26,22 +9,21 @@ var numOfMixed = 0;
 const submitButton = document.getElementById ("submit")
 
 submitButton.addEventListener("click", () => {
-parseAnswers("inputs")})
+submit()})
 
-// let totalAir = numOfAir++
-// console.log("this is", totalAir)
+async function submit(){
+    await parseAnswers("inputs");
+    displayFinalResults();
+}
 
 let inputs = document.getElementsByTagName ("input");
 
-function parseAnswers(finalResult){
-    // let finalResult= (`${[numOfEarth, numOfAir, numOfFire, numOfMixed, numOfWater]}`)
-    let results = []
-    console.log(finalResult)
 
+function parseAnswers(){
+    let array = []
     for (let i = 0; i < inputs.length; i++){
-        // console.log(inputs)
     let option = inputs[i];
-// console.log(option.checked)
+
         if (option.checked) {
             if (option.value == "air")
             {
@@ -68,15 +50,17 @@ function parseAnswers(finalResult){
             numOfMixed++
             }
         }
-return results
 
+        
+        console.log("this is air", numOfAir)
+        console.log("this is water", numOfWater)
+        console.log("this is fire", numOfFire)
+        console.log("this is earth", numOfEarth)
+        console.log("this is mixed", numOfMixed)
+        console.log("parse answers working")
     }
-    console.log("parse answers working",finalResult)
+    return array+["numOfAir = " + numOfAir, "numOfWater = " + numOfWater, "numOfFire = " + numOfFire, "numofEarth = " + numOfEarth, "numOfMixed = " + numOfMixed ]
 }
-
-// async await?
-// let finalResult;
-// document.createElement("h1")="Your final result is"+finalResult 
 
 
 function arrayFromArgs() {
@@ -86,17 +70,28 @@ function arrayFromArgs() {
     }     
         return results; 
     } 
+
+
     let finalResult = arrayFromArgs(parseAnswers()); 
 
+   
     console.log(finalResult);
 
-// let finalResult = parseAnswers();
 
 async function displayFinalResults(){
     
     console.log("async is working")
+    let result=await parseAnswers()
+    console.log(result)
+}
+ 
+//parse answers then switch
     
-    switch ([numOfEarth, numOfAir]) {
+    // displayFinalResults()
+
+    switch (finalResult) {
+        case numOfMixed >1: document.getElementById("mixed").style.display === "block";
+        break;
         case numOfEarth >1: document.getElementById("earth").style.display === "block";
         break;
         case numOfAir >1: document.getElementById("air").style.display === "block";
@@ -105,16 +100,8 @@ async function displayFinalResults(){
         break;
         case numOfWater >1: document.getElementById("water").style.display === "block";
         break;
-        case numOfMixed >1: document.getElementById("mixed").style.display === "block";
-        break;
         default: console.log("this is the default")
     }
-    // console.log(`${finalResult}`)
-    
-    return finalResult
-}
-
-displayFinalResults()
 
 
 // if (earth>1){
