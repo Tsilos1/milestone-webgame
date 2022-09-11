@@ -23,24 +23,24 @@ var numOfFire = 0
 var numOfWater = 0
 var numOfMixed = 0
 
-let submitButton = document.getElementById ("submit")
+const submitButton = document.getElementById ("submit")
 
-submitButton.addEventListener('click', parseAnswers (
-{
-    name: "quest1",
-    name: "quest2",
-    name: "quest3",
-    name: "quest4",
-    name: "quest5"
-}
-))
+submitButton.addEventListener("click", () => {
+parseAnswers("inputs")})
 
+// let totalAir = numOfAir++
+// console.log("this is", totalAir)
 
-function parseAnswers(inputs){
-    var inputs = document.getElementsByName("quest1", "quest2", "quest3", "quest4", "quest5");
-    for (let i = 0; i < inputs.length; i++);  
-    var option = inputs[i];
+let inputs = document.getElementsByTagName ("input");
 
+console.log(inputs)
+
+function parseAnswers(){
+
+    for (let i = 0; i < inputs.length; i++){
+        console.log(inputs)
+    let option = inputs[i];
+console.log(option.checked)
         if (option.checked) {
             if (option.value == "air")
             {
@@ -67,34 +67,30 @@ function parseAnswers(inputs){
             numOfMixed++
             }
         }
+
+        console.log ("This is earth", numOfEarth)
+        console.log ("This is air", numOfAir)
+        console.log ("This is fire", numOfFire)
+        console.log ("This is water", numOfWater)
+        console.log ("This is mixed", numOfMixed)
+    }
     }
 
 
-.then(switch())
+// async await?
 
-
-
-
-
-//unhide default of display:none
-//     var earth = document.getElementByInputValue("earth");
-//     var air = document.getElementByInputValue("air");
-//     var water = document.getElementByInputValue("water");
-//     var fire = document.getElementByInputValue("fire");
-//     var mixed = document.getElementByInputValue("mixed");
-
-switch () {
-    case earth >1: earth.style.display === "block"
-    break;
-    case air >1: air.style.display === "block"
-    break;
-    case fire >1: fire.style.display === "block"
-    break;
-    case water >1: water.style.display === "block"
-    break;
-    case mixed >1: mixed.style.display === "block"
-    break;
-}
+// switch (showResult) {
+//     case numOfEarth >1: document.getElementById("earth").style.display === "block"
+//     break;
+//     case numOfAir >1: document.getElementById("air").style.display === "block"
+//     break;
+//     case numOfFire >1: document.getElementById("fire").style.display === "block"
+//     break;
+//     case numOfWater >1: document.getElementById("water").style.display === "block"
+//     break;
+//     case numOfMixed >1: document.getElementById("mixed").style.display === "block"
+//     break;
+// }
         // else{
         //     earth.style.display="none";
         // }    

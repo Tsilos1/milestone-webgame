@@ -33,7 +33,7 @@ p {
     border-bottom: solid 1px;
 }
 
-#submitButton {
+#submit {
     color: blue;
     font-size: x-large;
     float: right;
