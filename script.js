@@ -8,19 +8,18 @@ var numOfMixed = 0;
 
 const submitButton = document.getElementById ("submit")
 
-submitButton.addEventListener("click", () => {
-submit()})
+submitButton.addEventListener("click", parseAnswers)
 
-async function submit(){
-    await parseAnswers("inputs");
-    displayFinalResults();
-}
+// async function submit(){
+//     await parseAnswers("inputs");
+//     displayFinalResults();
+// }
 
 let inputs = document.getElementsByTagName ("input");
 
 
 function parseAnswers(){
-    let array = []
+    // let array = []
     for (let i = 0; i < inputs.length; i++){
     let option = inputs[i];
 
@@ -59,94 +58,76 @@ function parseAnswers(){
         console.log("this is mixed", numOfMixed)
         console.log("parse answers working")
     }
-    return array+["numOfAir = " + numOfAir, "numOfWater = " + numOfWater, "numOfFire = " + numOfFire, "numofEarth = " + numOfEarth, "numOfMixed = " + numOfMixed ]
+    // return array+["numOfAir = " + numOfAir, "numOfWater = " + numOfWater, "numOfFire = " + numOfFire, "numofEarth = " + numOfEarth, "numOfMixed = " + numOfMixed ]
 }
 
 
-function arrayFromArgs() {
-    var results = [];     
-    for (var i = 0; i < arguments.length; i++) {         
-        results.push(arguments[i]);     
-    }     
-        return results; 
-    } 
 
 
-    let finalResult = arrayFromArgs(parseAnswers()); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function arrayFromArgs() {
+//     var results = [];     
+//     for (var i = 0; i < arguments.length; i++) {         
+//         results.push(arguments[i]);     
+//     }     
+//         return results; 
+//     } 
+
+
+//     let finalResult = arrayFromArgs(parseAnswers()); 
 
    
-    console.log(finalResult);
+//     console.log(finalResult);
 
 
-async function displayFinalResults(){
+// async function displayFinalResults(){
     
-    console.log("async is working")
-    let result=await parseAnswers()
-    console.log(result)
-}
+//     console.log("async is working")
+//     let result=await parseAnswers()
+//     console.log(result)
+// }
  
 //parse answers then switch
     
     // displayFinalResults()
 
-    switch (finalResult) {
-        case numOfMixed >1: document.getElementById("mixed").style.display === "block";
-        break;
-        case numOfEarth >1: document.getElementById("earth").style.display === "block";
-        break;
-        case numOfAir >1: document.getElementById("air").style.display === "block";
-        break;
-        case numOfFire >1: document.getElementById("fire").style.display === "block";
-        break;
-        case numOfWater >1: document.getElementById("water").style.display === "block";
-        break;
-        default: console.log("this is the default")
-    }
+    // switch (finalResult) {
+    //     case numOfMixed >= 2: document.getElementById("mixed").style.display === "block";
+    //     break;
+    //     case numOfEarth >= 2: document.getElementById("earth").style.display === "block";
+    //     break;
+    //     case numOfAir >= 2: document.getElementById("air").style.display === "block";
+    //     break;
+    //     case numOfFire >= 2: document.getElementById("fire").style.display === "block";
+    //     break;
+    //     case numOfWater >= 2: document.getElementById("water").style.display === "block";
+    //     break;
+    //     default: console.log("this is the default")
+    // }
 
 
-// if (earth>1){
-//     if(earth.style.display === "none"){
-//         air.style.display = "block";
-//     }
-//     else{
-//         air.style.display="none";
-//     }  
 
-//     if (air>1){
-//         if(air.style.display === "none"){
-//             air.style.display = "block";
-//         }
-//         else{
-//             air.style.display="none";
-//         }
-
-//     if (water>1){
-//         if(water.style.display === "none"){
-//             water.style.display = "block";
-//         }
-//         else{
-//             water.style.display="none";
-//         }    
-//     }
-
-//     if (fire>1){
-//         if(fire.style.display === "none"){
-//             fire.style.display = "block";
-//         }
-//         else{
-//             fire.style.display="none";
-//         }    
-//     }
-
-//     if (mixed>1){
-//         if(mixed.style.display === "none"){
-//             mixed.style.display = "block";
-//         }
-//         else{
-//             mixed.style.display="none";
-//         }    
-//     }
-// }
 
 
 // switch(results){
