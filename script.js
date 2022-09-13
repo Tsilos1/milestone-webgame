@@ -10,15 +10,11 @@ const submitButton = document.getElementById ("submit")
 
 submitButton.addEventListener("click", parseAnswers)
 
-// async function submit(){
-//     await parseAnswers("inputs");
-//     displayFinalResults();
-// }
-
 let inputs = document.getElementsByTagName ("input");
 
 
 function parseAnswers(){
+
     // let array = []
     for (let i = 0; i < inputs.length; i++){
     let option = inputs[i];
@@ -50,19 +46,56 @@ function parseAnswers(){
             }
         }
 
-        
+        // console.log(inputs)
         console.log("this is air", numOfAir)
         console.log("this is water", numOfWater)
         console.log("this is fire", numOfFire)
         console.log("this is earth", numOfEarth)
         console.log("this is mixed", numOfMixed)
-        console.log("parse answers working")
+        console.log("parse answers is working")
+    
     }
-    // return array+["numOfAir = " + numOfAir, "numOfWater = " + numOfWater, "numOfFire = " + numOfFire, "numofEarth = " + numOfEarth, "numOfMixed = " + numOfMixed ]
+
+//parse answers then switch (async await?)
+
+async function showResultsSection(){
+    let results = await parseAnswers.all ([
+        numOfAir(),
+        numOfEarth(),
+        numOfFire(),
+        numOfMixed(),
+        numOfWater()
+    ])
+
+    console.log('these are the results', results)
+
+    showResultsSection()
+    }
+
+
+    switch (showResultsSection) {
+        case numOfEarth >= 3: document.getElementById("earth").style.display = "block";
+        break;
+        case numOfAir >= 3: document.getElementById("air").style.display === "block";
+        break;
+        case numOfFire >= 3: document.getElementById("fire").style.display === "block";
+        break;
+        case numOfWater >= 3: document.getElementById("water").style.display === "block";
+        break;
+        default: document.getElementById("mixed").style.display === "block";
+        
+        console.log("showResultsSection is working")
+    }
+    
+    showResultsSection()
+
 }
 
 
-
+    // return array+["numOfAir = " + numOfAir, "numOfWater = " + numOfWater, "numOfFire = " + numOfFire, "numofEarth = " + numOfEarth, "numOfMixed = " + numOfMixed ]
+// function numOfAir(result) {
+//     console.log(`The new total num of air is: ${numOfAir}`)
+// }
 
 
 
@@ -170,13 +203,6 @@ function parseAnswers(){
 //add totals of sum winning values
 
 
-
-
-//if 2 earth, then earth wins
-//else if 2 air, then air wins
-//else if 2 water, then water wins
-//else if if 2 fire, then fire wins
-//else mixed wins
 
 
 //based on what wins, go to results page and unhide winning value
