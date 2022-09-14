@@ -15,7 +15,7 @@
         <hr>
     </div>
 
-    <form id="quizForm">
+    <form id="quizForm" action="">
     
     <div id="quiz">
 
@@ -24,7 +24,7 @@
             <h2>Question 1:</h2>
 
             <input type="radio" name="quest1" id="quest1Earth" value="earth">
-            <label for="quest1">Option A</label><br>
+            <label for="quest1">earth</label><br>
 
             <input type="radio" name="quest1" id="quest1Air" value="air">
             <label for="quest1">Option B</label><br>
@@ -55,7 +55,7 @@
             <label for="quest2">Option D</label><br>
 
             <input type="radio" name="quest2" id="quest2Earth" value="earth">
-            <label for="quest2">Option E</label>
+            <label for="quest2">earth</label>
         </div>
 
         <div class="questAnsBlock">
@@ -72,7 +72,7 @@
             <label for="quest3">Option 3</label><br>
 
             <input type="radio" name="quest3" id="quest3Earth" value="earth">
-            <label for="quest3">Option 4</label><br>
+            <label for="quest3">earth</label><br>
 
             <input type="radio" name="quest3" id="quest3Air" value="air">
             <label for="quest3">Option 5</label>
@@ -91,7 +91,7 @@
             <label for="quest4">Option 2</label><br>
 
             <input type="radio" name="quest4" id="quest4Earth" value="earth">
-            <label for="quest4">Option 3</label><br>
+            <label for="quest4">earth</label><br>
 
             <input type="radio" name="quest4" id="quest4Air" value="air">
             <label for="quest4">Option 4</label><br>
@@ -109,7 +109,7 @@
             <label for="quest5">Option 1</label><br>
 
             <input type="radio" name="quest5" id="quest5Earth"  value="earth">
-            <label for="quest5Air">Option 2</label><br>
+            <label for="quest5Air">earth</label><br>
 
             <input type="radio" name="quest5" id="quest5Air" value="air">
             <label for="quest5">Option 3</label><br>
@@ -122,21 +122,19 @@
         </div>
         
         <button
-        id="submit"
+        id="submitButton"
         type="submit"
         value="Results">Submit
         </button>
+    </div>
     </form>
     
-    </div>
+    
 
 
     <div id="Results">
     
-            <div id="earth" style="display:none">
-                <h2>You are earth</h2>
-                <p></p>
-            </div>
+            <div id="earth"></div>
             
             <div id="air" style="display:none" >
                 <h2>You are air</h2>
@@ -167,7 +165,7 @@
     <br>
     
 
-               
+    <script src="script.js"></script>         
 </body>
 
 </html>

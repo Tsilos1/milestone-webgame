@@ -1,52 +1,56 @@
-let form = document.getElementById("quizForm")
+let submitButton = document.getElementById("submitButton")
 
-var numOfAir = 0;
-var numOfEarth = 0;
-var numOfFire = 0;
-var numOfWater = 0;
-var numOfMixed = 0;
+submitButton.addEventListener("click", () => {
+    parseAnswers()
+    // e.preventDefault()
+})
 
-const submitButton = document.getElementById ("submit")
+// let form1 = document.getElementById("quizForm")
+// console.log("form", form1)
 
-submitButton.addEventListener("click", parseAnswers)
+let inputs = document.getElementsByTagName("input");
 
-let inputs = document.getElementsByTagName ("input");
-
+console.log("inputs", inputs)
 
 function parseAnswers(){
-
-    // let array = []
+    let numOfAir = 0;
+    let numOfEarth = 0;
+    let numOfFire = 0;
+    let numOfWater = 0;
+    let numOfMixed = 0;
     for (let i = 0; i < inputs.length; i++){
     let option = inputs[i];
 
         if (option.checked) {
-            if (option.value == "air")
+            if (option.value === "air")
             {
             numOfAir++
             }
    
-        else if (option.value == "earth")
+        else if (option.value === "earth")
             {
             numOfEarth++
             }
 
-        else if (option.value =="fire")
+        else if (option.value ==="fire")
             {
             numOfFire++
             }
 
-        else if (option.value =="water")
+        else if (option.value ==="water")
             {
             numOfWater++
             }
 
-        else if (option.value =="mixed")
+        else if (option.value ==="mixed")
             {
             numOfMixed++
             }
         }
+    }
 
         // console.log(inputs)
+        console.log("option checked", option.checked)
         console.log("this is air", numOfAir)
         console.log("this is water", numOfWater)
         console.log("this is fire", numOfFire)
@@ -54,42 +58,50 @@ function parseAnswers(){
         console.log("this is mixed", numOfMixed)
         console.log("parse answers is working")
     
-    }
+        if (numOfEarth >=3){
+            console.log("INSIDE IF STATEMENT")
+        //    let results = document.getElementById("earth")
+           let h2 = document.createElement("h2")
+           h2.textContent = "YOU ARE EARTH"
+           body.append(h2)
+        }
+
+    
+}
+    // switch (undefined) {
+    //     case numOfEarth >= 3: document.getElementById("earth").style.display = "block";
+    //     console.log("earth", numOfEarth)
+    //     break;
+    //     case numOfAir >= 3: document.getElementById("air").style.display === "block";
+    //     break;
+    //     case numOfFire >= 3: document.getElementById("fire").style.display === "block";
+    //     break;
+    //     case numOfWater >= 3: document.getElementById("water").style.display === "block";
+    //     break;
+    //     // default: document.getElementById("mixed").style.display === "block";
+    //     console.log(numOfEarth)
+        
+    //     console.log("showResultsSection is working")
+    // }
+
+
+
 
 //parse answers then switch (async await?)
 
-async function showResultsSection(){
-    let results = await parseAnswers.all ([
-        numOfAir(),
-        numOfEarth(),
-        numOfFire(),
-        numOfMixed(),
-        numOfWater()
-    ])
+// let newResults = async function showResultsSection(){
+//     let results = await parseAnswers ()
 
-    console.log('these are the new totals', results)
+//     console.log('these are the new totals', results)
 
-    showResultsSection()
-    }
-
-
-    switch (showResultsSection) {
-        case numOfEarth >= 3: document.getElementById("earth").style.display = "block";
-        break;
-        case numOfAir >= 3: document.getElementById("air").style.display === "block";
-        break;
-        case numOfFire >= 3: document.getElementById("fire").style.display === "block";
-        break;
-        case numOfWater >= 3: document.getElementById("water").style.display === "block";
-        break;
-        default: document.getElementById("mixed").style.display === "block";
-        
-        console.log("showResultsSection is working")
-    }
+//     }
     
-    return showResultsSection()
 
-}
+    
+    
+//     return showResultsSection()
+
+// }
 
 
 //     return array+["numOfAir = " + numOfAir, "numOfWater = " + numOfWater, "numOfFire = " + numOfFire, "numofEarth = " + numOfEarth, "numOfMixed = " + numOfMixed ]
