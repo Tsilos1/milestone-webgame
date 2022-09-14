@@ -1,21 +1,15 @@
-document.getElementById("submitButton").addEventListener("click", (e) => {
+document.getElementById("submit").addEventListener("click", (e) => {
     let form =document.getElementById('quizForm');
-    
+    let title=document.getElementById('title')
+
     parseAnswers();
     e.preventDefault();
     form.style['display']='none';
+    title.style['display']='none';
 })
-
-//     }
-// }
-
-// let inputs = document.getElementsByTagName("input");
-
-// console.log("inputs", inputs)
 
 function parseAnswers(){
     let inputs = document.getElementsByTagName("input");
-    console.log("PARSING!!")
     let numOfAir = 0;
     let numOfEarth = 0;
     let numOfFire = 0;
@@ -50,44 +44,31 @@ function parseAnswers(){
             }
         }
     }
-
-        // console.log(inputs)
-        // console.log("option checked", option.checked)
-        console.log("this is air", numOfAir)
-        console.log("this is water", numOfWater)
-        console.log("this is fire", numOfFire)
-        console.log("this is earth", numOfEarth)
-        console.log("this is mixed", numOfMixed)
-        console.log("parse answers is working")
     
         if (numOfEarth >=3){
-            console.log("INSIDE IF STATEMENT")
            let results = document.getElementById("earth")
            results.style.display="block"
         }
 
-        if (numOfAir >=3){
-            console.log("INSIDE IF STATEMENT")
+        else if (numOfAir >=3){
            let results = document.getElementById("air")
            results.style.display="block"
         }
 
-        if (numOfWater >=3){
-            console.log("INSIDE IF STATEMENT")
+        else if (numOfWater >=3){
            let results = document.getElementById("water")
            results.style.display="block"
         }
 
-        if (numOfFire >=3){
-            console.log("INSIDE IF STATEMENT")
+        else if (numOfFire >=3){
            let results = document.getElementById("fire")
            results.style.display="block"
         }
 
-        if (numOfMixed >=3){
-            console.log("INSIDE IF STATEMENT")
-           let results = document.getElementById("mixed")
-           results.style.display="block"
+
+        else {
+            let results = document.getElementById("mixed")
+            results.style.display="block"
         }
 
     
