@@ -1,7 +1,13 @@
 document.getElementById("submitButton").addEventListener("click", (e) => {
+    let form =document.getElementById('quizForm');
+    
     parseAnswers();
     e.preventDefault();
+    form.style['display']='none';
 })
+
+//     }
+// }
 
 // let inputs = document.getElementsByTagName("input");
 
@@ -57,6 +63,30 @@ function parseAnswers(){
         if (numOfEarth >=3){
             console.log("INSIDE IF STATEMENT")
            let results = document.getElementById("earth")
+           results.style.display="block"
+        }
+
+        if (numOfAir >=3){
+            console.log("INSIDE IF STATEMENT")
+           let results = document.getElementById("air")
+           results.style.display="block"
+        }
+
+        if (numOfWater >=3){
+            console.log("INSIDE IF STATEMENT")
+           let results = document.getElementById("water")
+           results.style.display="block"
+        }
+
+        if (numOfFire >=3){
+            console.log("INSIDE IF STATEMENT")
+           let results = document.getElementById("fire")
+           results.style.display="block"
+        }
+
+        if (numOfMixed >=3){
+            console.log("INSIDE IF STATEMENT")
+           let results = document.getElementById("mixed")
            results.style.display="block"
         }
 
