@@ -1,7 +1,7 @@
 document.getElementById("submit").addEventListener("click", (e) => {
     let form =document.getElementById('quizForm');
-    let title=document.getElementById('title')
-
+    let title=document.getElementById('title');
+    
     parseAnswers();
     e.preventDefault();
     form.style['display']='none';
