@@ -1,0 +1,70 @@
+@import "utilities";
+@import "config";
+
+
+
+#title {
+    img {
+        border-radius: 30%;
+        height: 300px;
+    }
+
+    @include center;
+    // text-align: center;
+    background-color: invert($primary-color, 80%);
+
+    h2 {
+        font-family: Merriweather;
+    }
+}
+
+#quiz {
+    @include set-bg ($secondary-color);
+    height: 100%;
+    align-items: top;
+    justify-content: center;
+    margin-top: 30px;
+    align-content: center;
+    margin-bottom: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    
+
+    .questAnsBlock {
+        @include margins;
+        font-family: Poppins;
+    }
+
+    input {
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        @include radio-margins;
+    }
+
+    h3 {
+        @include margins;
+        margin-left: 50px;
+        margin-right: 50px;
+        font-size: 30px;
+    }
+
+    button {
+        @include margins;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        border-radius: 30%;
+        border: 2px solid black;
+        font-family: Poppins;
+        background-color: $primary-color;
+    }
+    
+}
+
+h1 {
+    font: $font-stack;    
+    font-size: 50px;
+    line-height: 1.2;
+    color: $primary-color;
+}
+
