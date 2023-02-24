@@ -1,0 +1,51 @@
+
+//text color
+// @function text-color-picker($color) {
+//     @if(lightness($color) > 70) {
+//       @return black;
+//     } @else {
+//       @return white;
+//     }
+//   }
+
+//SCSS Mixin
+@mixin set-bg($color){
+    background-color: $color;
+    color: text-color-picker ($color)
+}
+
+
+@mixin center {
+    // display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+
+@mixin margins {
+  margin-left: 50px;
+  margin-right: 100px;
+}
+
+
+@mixin radio-margins {
+  margin-left: 50px;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Poppins:wght@500&display=swap');
+
+
+@function invert($color, $amount: 100%) {
+  $inverse: change-color($color, $hue: hue($color) + 180);
+  @return mix($inverse, $color, $amount);
+};
+
+
+
+ 
+
+//Standard CSS
+
+

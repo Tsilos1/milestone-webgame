@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Poppins:wght@500&display=swap");
+#title {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: #6399c2;
+}
+#title img {
+  border-radius: 30%;
+  height: 300px;
+}
+#title h2 {
+  font-family: Merriweather;
+}
+
+#quiz {
+  background-color: #fbe7b4;
+  color: text-color-picker #fbe7b4;
+  height: 100%;
+  align-items: top;
+  justify-content: center;
+  margin-top: 30px;
+  align-content: center;
+  margin-bottom: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+#quiz .questAnsBlock {
+  margin-left: 50px;
+  margin-right: 100px;
+  font-family: Poppins;
+}
+#quiz input {
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  margin-left: 50px;
+}
+#quiz h3 {
+  margin-left: 50px;
+  margin-right: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 30px;
+}
+#quiz button {
+  margin-left: 50px;
+  margin-right: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 30%;
+  border: 2px solid black;
+  font-family: Poppins;
+  background-color: #e28743;
+}
+
+h1 {
+  font: Merriweather, Poppins;
+  font-size: 50px;
+  line-height: 1.2;
+  color: #e28743;
+}/*# sourceMappingURL=style.css.map */
